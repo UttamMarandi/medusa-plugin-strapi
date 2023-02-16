@@ -28,8 +28,8 @@ class UpdateStrapiService extends BaseService {
 
     this.protocol = this.options_.strapi_protocol
 
-    this.strapi_URL_STRING=`${this.protocol??"https"}://${this.options_.strapi_url??"localhost"}:${this.options_.strapi_port??1337}`
 
+    this.strapi_URL_STRING = this.options_.strapi_live_url ? `${this.protocol??"https"}://${this.options_.strapi_url}`:`${this.protocol??"https"}://${this.options_.strapi_url??"localhost"}:${this.options_.strapi_port??1337}`
 
     this.strapiAuthToken = ""
 
